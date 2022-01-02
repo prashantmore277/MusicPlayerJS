@@ -15,20 +15,42 @@
         <div class="navbar">
             <img src="./img/logo.png" class="logo">
             <ul>
-                <li><a>Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Specification</a></li>
-                <li><a>Product</a></li>
-                <li><a>Connect</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Specification</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Connect</a></li>
             </ul>
         </div>
         <div class="content">
             <div class="left-col">
                 <h1>THE <br> REAL<br> SOUND</h1>
             </div>
-            <div class="right-col"></div>
+            <div class="right-col">
+                <p>Click Here To Play</p>
+                <img src="./img/play.png" alt="playbtn" id="icon">
+            </div>
         </div>
     </div>
+    <audio id="mySong">
+        <source src="./audio/song.mp3" type="audio/mp3"> 
+    </audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function() {
+            if (mySong.paused) {
+                mySong.play();
+                icon.src = "./img/pause.png";
+            } else {
+                mySong.pause();
+                icon.src = "./img/play.png";
+            }
+
+        }
+    </script>
 </body>
 
 </html>
